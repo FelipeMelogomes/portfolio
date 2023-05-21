@@ -1,10 +1,10 @@
-/*=============== SHOW MENU ===============*/
+/* SHOW MENU */
 
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
 
-/*===== MENU SHOW =====*/
+/* MENU SHOW */
 
 /* Validate if constant exists */
 if (navToggle) {
@@ -13,7 +13,7 @@ if (navToggle) {
   });
 }
 
-/*===== MENU HIDDEN =====*/
+/* MENU HIDDEN */
 
 /* Validate if constant exists */
 if (navClose) {
@@ -22,7 +22,7 @@ if (navClose) {
   });
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
+/* REMOVE MENU MOBILE */
 
 const navLink = document.querySelectorAll(".nav__link");
 
@@ -33,7 +33,7 @@ const linkAction = () => {
 };
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-/*=============== ADD BLUR TO HEADER ===============*/
+/* ADD BLUR TO HEADER */
 
 const blurHeader = () => {
   const header = document.getElementById("header");
@@ -44,7 +44,7 @@ const blurHeader = () => {
 };
 window.addEventListener("scroll", blurHeader);
 
-/*=============== EMAIL JS ===============*/
+/* EMAIL JS */
 
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.getElementById("contact-message");
@@ -82,7 +82,7 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener("submit", sendEmail);
 
-/*=============== SHOW SCROLL UP ===============*/
+/* SHOW SCROLL UP */
 
 const scrollUp = () => {
   const scrollUp = document.getElementById("scroll-up");
@@ -93,7 +93,7 @@ const scrollUp = () => {
 };
 window.addEventListener("scroll", scrollUp);
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+/* SCROLL SECTIONS ACTIVE LINK */
 
 const sections = document.querySelectorAll("section[id]");
 
@@ -117,7 +117,7 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
+/* SCROLL REVEAL ANIMATION */
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
