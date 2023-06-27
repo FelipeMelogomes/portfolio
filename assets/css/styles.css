@@ -1,11 +1,11 @@
-/*=============== GOOGLE FONTS ===============*/
+/* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+/* VARIABLES CSS */
 :root {
     --header-height: 3.5rem;
 
-    /*========== Colors ==========*/
+    /* Colors */
     /*Color mode HSL(hue, saturation, lightness)*/
     /* 
       Change favorite color
@@ -27,7 +27,7 @@
     --body-color: hsl(228, 15%, 20%);
     --container-color: hsl(228, 15%, 15%);
 
-    /*========== Font and typography ==========*/
+    /* Font and typography*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: "Poppins", sans-serif;
     --biggest-font-size: 2rem;
@@ -39,17 +39,17 @@
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
 
-    /*========== Font weight ==========*/
+    /* Font weight*/
     --font-regular: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    /*========== z index ==========*/
+    /* z index */
     --z-tooltip: 10;
     --z-fixed: 100;
 }
 
-/*========== Responsive typography ==========*/
+/* Responsive typography */
 @media screen and (min-width: 1152px) {
     :root {
         --biggest-font-size: 4rem;
@@ -63,7 +63,7 @@
     }
 }
 
-/*=============== BASE ===============*/
+/* BASE */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -118,7 +118,7 @@ svg {
     height: auto;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+/* REUSABLE CSS CLASSES */
 .container {
     max-width: 1120px;
     margin-inline: 1.5rem;
@@ -156,10 +156,9 @@ svg {
 
 .main {
     overflow: hidden;
-    /* For animation ScrollReveal */
 }
 
-/*=============== HEADER & NAV ===============*/
+/* HEADER & NAV */
 .header {
     position: fixed;
     width: 100%;
@@ -261,7 +260,7 @@ svg {
     color: var(--first-color);
 }
 
-/*=============== HOME ===============*/
+/* HOME */
 .home {
     background-color: var(--container-color);
 }
@@ -329,7 +328,7 @@ svg {
     filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
 }
 
-/*=============== BUTTON ===============*/
+/* BUTTON */
 .button {
     display: inline-block;
     background-color: var(--first-color);
@@ -344,7 +343,7 @@ svg {
     box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, 0.25);
 }
 
-/*=============== ABOUT ===============*/
+/* ABOUT */
 .about__container {
     row-gap: 2.5rem;
 }
@@ -369,7 +368,7 @@ svg {
     stroke: var(--first-color);
 }
 
-/*=============== SKILLS ===============*/
+/* SKILLS */
 .skills {
     background-color: var(--container-color);
 }
@@ -413,7 +412,7 @@ svg {
     color: var(--first-color);
 }
 
-/*=============== PROJECTS ===============*/
+/* PROJECTS */
 .projects {
     background-color: var(--container-color);
 }
@@ -486,7 +485,7 @@ svg {
     bottom: 0;
 }
 
-/*=============== CONTACT ===============*/
+/* CONTACT */
 .contact__container {
     padding-top: 1rem;
 }
@@ -531,7 +530,7 @@ svg {
     color: var(--title-color);
 }
 
-/*=============== FOOTER ===============*/
+/* FOOTER */
 .footer {
     background-color: var(--container-color);
     padding-block: 3.5rem 2rem;
@@ -581,7 +580,7 @@ svg {
     margin-top: 2rem;
 }
 
-/*=============== SCROLL BAR ===============*/
+/* SCROLL BAR */
 ::-webkit-scrollbar {
     width: 0.6rem;
     border-radius: 0.5rem;
@@ -598,18 +597,17 @@ svg {
 }
 
 /* mozila compatible */
-/* Estilização do polegar da barra de rolagem */
 html::-moz-scrollbar-thumb {
     background-color: hsl(228, 8%, 35%);
     border-radius: 0.5rem;
 }
 
-/* Estilização do polegar da barra de rolagem ao passar o mouse */
+
 html::-moz-scrollbar-thumb:hover {
     background-color: hsl(228, 8%, 45%);
 }
 
-/*=============== SCROLL UP ===============*/
+/* SCROLL UP */
 .scrollup {
     position: fixed;
     right: 1rem;
@@ -634,7 +632,7 @@ html::-moz-scrollbar-thumb:hover {
     bottom: 3rem;
 }
 
-/*=============== BREAKPOINTS ===============*/
+/* BREAKPOINTS */
 /* For small devices */
 @media screen and (max-width: 320px) {
     .container {
