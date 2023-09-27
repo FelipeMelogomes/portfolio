@@ -28,7 +28,7 @@
     --text-color: hsl(228, 8%, 65%);
     --body-color: hsl(228, 15%, 20%);
     --container-color: hsl(228, 15%, 15%);
-    
+
     /* Font and typography*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: "Poppins", sans-serif;
