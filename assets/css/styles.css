@@ -286,6 +286,10 @@ svg {
     font-size: var(--bigger-font-size);
 }
 
+.home__education {
+    margin-bottom: 1rem;
+}
+
 .home__subtitle span,
 .home__title {
     color: var(--first-color);
