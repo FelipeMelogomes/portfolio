@@ -418,6 +418,49 @@ svg {
     color: var(--first-color);
 }
 
+/* CURSOS  */
+.courses {
+    background-color: var(--container-color);
+}
+
+.courses__container {
+    padding-bottom: 2rem;
+    row-gap: 3.5rem;
+    width: 100%;
+}
+
+.courses__data {
+    text-align: center;
+}
+
+.courses__description {
+    margin-bottom: 2rem;
+}
+
+.courses__content,
+.courses__group {
+    display: grid;
+}
+
+.courses__content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-items: baseline;
+}
+
+.courses__group {
+    row-gap: 1rem;
+    list-style: decimal-leading-zero;
+}
+
+.courses__item {
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.courses__item::marker {
+    color: var(--first-color);
+}
 /* PROJECTS */
 .projects {
     background-color: var(--container-color);
@@ -650,6 +693,10 @@ html::-moz-scrollbar-thumb:hover {
         grid-template-columns: max-content;
         row-gap: 1rem;
     }
+    .courses__content {
+        grid-template-columns: max-content;
+        row-gap: 1rem;
+    }
 }
 
 /* For medium devices */
@@ -657,18 +704,20 @@ html::-moz-scrollbar-thumb:hover {
     .home__container,
     .about__container,
     .skills__container,
+    .courses__container,
     .projects__container,
     .contact__container {
         grid-template-columns: 360px;
         justify-content: center;
     }
+
 }
 
 @media screen and (min-width: 768px) {
     .nav__menu {
         width: 55%;
     }
-
+    .courses__container,
     .home__container,
     .about__container,
     .skills__container {
@@ -679,7 +728,9 @@ html::-moz-scrollbar-thumb:hover {
     .home__data,
     .about__data,
     .skills__data,
-    :is(.about__data, .skills__data) :is(.section__subtitle, .section__title) {
+    .courses__data,
+    :is(.about__data, .skills__data, .courses__data, )
+        :is(.section__subtitle, .section__title) {
         text-align: initial;
     }
 
@@ -782,20 +833,38 @@ html::-moz-scrollbar-thumb:hover {
         column-gap: 10rem;
         padding-bottom: 4rem;
     }
+    .courses__container {
+        grid-template-columns: 340px 425px;
+        column-gap: 10rem;
+        padding-bottom: 4rem;
+    }
 
     .skills__description {
+        margin-bottom: 3rem;
+    }
+    .courses__description {
         margin-bottom: 3rem;
     }
 
     .skills__content {
         column-gap: 8rem;
     }
+    .courses__content {
+        column-gap: 8rem;
+    }
 
     .skills__group {
         row-gap: 1.5rem;
     }
+    .courses__group {
+        row-gap: 1.5rem;
+    }
 
     .skills__item {
+        font-size: var(--h3-font-size);
+    }
+
+    .courses__item {
         font-size: var(--h3-font-size);
     }
 
