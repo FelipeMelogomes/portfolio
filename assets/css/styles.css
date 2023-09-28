@@ -426,7 +426,6 @@ svg {
 .courses__container {
     padding-bottom: 2rem;
     row-gap: 3.5rem;
-    width: 100%;
 }
 
 .courses__data {
