@@ -135,6 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
         speed: 200,
         loop: true,
     })
-        .type("Desenvolvedor Front-End", { delay: 900 })
+        .type("Desenvolvedor Front-end", { delay: 900 })
         .go();
 });
