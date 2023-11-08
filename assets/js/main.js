@@ -32,11 +32,15 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 /* ADD BLUR TO HEADER */
 const blurHeader = () => {
     const header = document.getElementById("header");
+    const shouldBlur = window.scrollY >= 50;
 
-    this.scrollY >= 50
-        ? header.classList.add("blur-header")
-        : header.classList.remove("blur-header");
+    if (shouldBlur) {
+        header.classList.add("blur-header");
+    } else {
+        header.classList.remove("blur-header");
+    }
 };
+
 window.addEventListener("scroll", blurHeader);
 
 /* EMAIL JS */
@@ -94,20 +98,25 @@ const scrollActive = () => {
     const scrollY = window.pageYOffset;
 
     sections.forEach((current) => {
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute("id"),
-            sectionsClass = document.querySelector(
-                ".nav__menu a[href*=" + sectionId + "]"
-            );
+        const sectionId = current.getAttribute("id");
+        const sectionsClass = document.querySelector(
+            `.nav__menu a[href*=${sectionId}]`
+        );
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            sectionsClass.classList.add("active-link");
-        } else {
-            sectionsClass.classList.remove("active-link");
+        if (sectionsClass) {
+            const sectionRect = current.getBoundingClientRect();
+            const isSectionInView =
+                sectionRect.top <= 58 && sectionRect.bottom >= 58;
+
+            if (isSectionInView) {
+                sectionsClass.classList.add("active-link");
+            } else {
+                sectionsClass.classList.remove("active-link");
+            }
         }
     });
 };
+
 window.addEventListener("scroll", scrollActive);
 
 /* SCROLL REVEAL ANIMATION */
