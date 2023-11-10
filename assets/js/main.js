@@ -148,12 +148,3 @@ document.addEventListener("DOMContentLoaded", () => {
         .go();
 });
 
-/* async cdn icons */
-
-window.addEventListener("load", function () {
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-        "https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css";
-    document.head.appendChild(link);
-});

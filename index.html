@@ -500,6 +500,7 @@
       </div>
    </footer>
 
+
    <!-- SCROLL UP -->
    <a href="#" class="scrollup" alt="scroollbar" aria-label="Scroolbar" id="scroll-up"><i
          class="ri-arrow-up-line"></i></a>
@@ -514,8 +515,18 @@
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" async></script>
 
    <!-- MAIN JS -->
-   <script src="assets/js/main.js" defer></script>
+   <script src="assets/js/main.js"></script>
 
+   <!---- ASYNC CDN ICONS LOAD -->
+   <script>
+      window.addEventListener("load", function () {
+         var link = document.createElement("link");
+         link.rel = "stylesheet";
+         link.href =
+            "https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css";
+         document.head.appendChild(link);
+      });
+   </script>
 
 </body>
 
