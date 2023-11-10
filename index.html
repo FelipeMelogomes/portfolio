@@ -10,7 +10,8 @@
    <link rel="shortcut icon" href="assets/img/garoto.webp" type="image/x-icon">
 
    <!-- REMIXICONS -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" async rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
+      onload="this.onload=null;this.rel='stylesheet'">
 
    <!-- CSS -->
    <link rel="stylesheet" href="assets/css/styles.css">
@@ -498,6 +499,16 @@
          </span>
       </div>
    </footer>
+
+   <!-- async load cdn -->
+   <script>
+      window.addEventListener('load', function () {
+         var link = document.createElement('link');
+         link.rel = 'stylesheet';
+         link.href = 'https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css';
+         document.head.appendChild(link);
+      });
+   </script>
 
    <!-- SCROLL UP -->
    <a href="#" class="scrollup" alt="scroollbar" aria-label="Scroolbar" id="scroll-up"><i
