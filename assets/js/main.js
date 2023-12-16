@@ -121,7 +121,7 @@ const scrollActive = () => {
 window.addEventListener("scroll", scrollActive);
 
 /* SCROLL REVEAL ANIMATION */
-const sr = new ScrollReveal({
+const sr = ScrollReveal({
     origin: "top",
     distance: "60px",
     duration: 2500,
@@ -129,18 +129,12 @@ const sr = new ScrollReveal({
     reset: true, // Animations repeat
 });
 
-sr.reveal(
-    ".home__data, .home__social, .contact__container, .footer__container"
-);
 sr.reveal(".home__image", { origin: "bottom" });
-
-const leftOriginElements = [".about__data", ".skills__data"];
-const rightOriginElements = [".about__image", ".skills__content"];
-const intervalElements = [".services__card", ".projects__card"];
-
-sr.reveal(leftOriginElements.join(", "), { origin: "left" });
-sr.reveal(rightOriginElements.join(", "), { origin: "right" });
-sr.reveal(intervalElements.join(", "), { interval: 200 });
+sr.reveal(".about__data, .skills__data", { origin: "left" });
+sr.reveal(".about__image, .skills__content", {
+    origin: "right",
+});
+sr.reveal(".services__card, .projects__card", { interval: 200 });
 
 /* ANIMATION DIGITATION */
 const initTypeIt = () => {
