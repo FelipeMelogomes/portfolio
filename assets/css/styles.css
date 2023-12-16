@@ -438,6 +438,7 @@ svg {
 .projects__img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .projects__modal {
