@@ -121,7 +121,7 @@ const scrollActive = () => {
 window.addEventListener("scroll", scrollActive);
 
 /* SCROLL REVEAL ANIMATION */
-const sr = ScrollReveal({
+const sr = new ScrollReveal({
     origin: "top",
     distance: "60px",
     duration: 2500,
