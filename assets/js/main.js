@@ -1,22 +1,23 @@
-/* SHOW MENU */
-const navMenu = document.getElementById("nav-menu"),
-    navToggle = document.getElementById("nav-toggle"),
-    navClose = document.getElementById("nav-close");
+/* SELECT ELEMENT */
+const selectElement = (element) => document.getElementById(element);
 
-/* MENU SHOW */
-/* Validate if constant exists */
+/* SHOW MENU */
+const navMenu = selectElement("nav-menu"),
+    navToggle = selectElement("nav-toggle"),
+    navClose = selectElement("nav-close");
+
+const toggleMenu = () => {
+    navMenu.classList.toggle("show-menu");
+};
+
+// Adicionar evento de clique para mostrar o menu
 if (navToggle) {
-    navToggle.addEventListener("click", () => {
-        navMenu.classList.add("show-menu");
-    });
+    navToggle.addEventListener("click", toggleMenu);
 }
 
-/* MENU HIDDEN */
-/* Validate if constant exists */
+// Adicionar evento de clique para esconder o menu
 if (navClose) {
-    navClose.addEventListener("click", () => {
-        navMenu.classList.remove("show-menu");
-    });
+    navClose.addEventListener("click", toggleMenu);
 }
 
 /* REMOVE MENU MOBILE */
@@ -84,10 +85,13 @@ contactForm.addEventListener("submit", sendEmail);
 /* SHOW SCROLL UP */
 const scrollUp = () => {
     const scrollUp = document.getElementById("scroll-up");
+    const scrollPosition = window.scrollY;
 
-    this.scrollY >= 350
-        ? scrollUp.classList.add("show-scroll")
-        : scrollUp.classList.remove("show-scroll");
+    if (scrollPosition >= 350) {
+        scrollUp.classList.add("show-scroll");
+    } else {
+        scrollUp.classList.remove("show-scroll");
+    }
 };
 window.addEventListener("scroll", scrollUp);
 
@@ -95,24 +99,21 @@ window.addEventListener("scroll", scrollUp);
 const sections = document.querySelectorAll("section[id]");
 
 const scrollActive = () => {
-    const scrollY = window.pageYOffset;
+    const scrollPosition = 58;
+    const navLinks = document.querySelectorAll(".nav__menu a");
 
-    sections.forEach((current) => {
-        const sectionId = current.getAttribute("id");
-        const sectionsClass = document.querySelector(
+    sections.forEach((section) => {
+        const sectionId = section.getAttribute("id");
+        const sectionLink = document.querySelector(
             `.nav__menu a[href*=${sectionId}]`
         );
 
-        if (sectionsClass) {
-            const sectionRect = current.getBoundingClientRect();
+        if (sectionLink) {
+            const { top, bottom } = section.getBoundingClientRect();
             const isSectionInView =
-                sectionRect.top <= 58 && sectionRect.bottom >= 58;
+                top <= scrollPosition && bottom >= scrollPosition;
 
-            if (isSectionInView) {
-                sectionsClass.classList.add("active-link");
-            } else {
-                sectionsClass.classList.remove("active-link");
-            }
+            sectionLink.classList.toggle("active-link", isSectionInView);
         }
     });
 };
@@ -132,19 +133,25 @@ sr.reveal(
     ".home__data, .home__social, .contact__container, .footer__container"
 );
 sr.reveal(".home__image", { origin: "bottom" });
-sr.reveal(".about__data, .skills__data", { origin: "left" });
-sr.reveal(".about__image, .skills__content", {
-    origin: "right",
-});
-sr.reveal(".services__card, .projects__card", { interval: 200 });
+
+const leftOriginElements = [".about__data", ".skills__data"];
+const rightOriginElements = [".about__image", ".skills__content"];
+const intervalElements = [".services__card", ".projects__card"];
+
+sr.reveal(leftOriginElements.join(", "), { origin: "left" });
+sr.reveal(rightOriginElements.join(", "), { origin: "right" });
+sr.reveal(intervalElements.join(", "), { interval: 200 });
 
 /* ANIMATION DIGITATION */
-document.addEventListener("DOMContentLoaded", () => {
-    new TypeIt(".home__education", {
+const initTypeIt = () => {
+    const typeItOptions = {
         speed: 200,
         loop: true,
-    })
+    };
+
+    const typeElement = new TypeIt(".home__education", typeItOptions)
         .type("Desenvolvedor Front-end", { delay: 900 })
         .go();
-});
+};
 
+document.addEventListener("DOMContentLoaded", initTypeIt);
