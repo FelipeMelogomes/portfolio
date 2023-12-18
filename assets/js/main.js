@@ -135,17 +135,3 @@ sr.reveal(".about__image, .skills__content", {
     origin: "right",
 });
 sr.reveal(".services__card, .projects__card", { interval: 200 });
-
-/* ANIMATION DIGITATION */
-const initTypeIt = () => {
-    const typeItOptions = {
-        speed: 200,
-        loop: true,
-    };
-
-    const typeElement = new TypeIt(".home__education", typeItOptions)
-        .type("Desenvolvedor Front-end", { delay: 900 })
-        .go();
-};
-
-document.addEventListener("DOMContentLoaded", initTypeIt);
