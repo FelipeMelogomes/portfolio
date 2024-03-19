@@ -292,7 +292,7 @@ svg {
     border-right: 0.15em solid var(--first-color);
     white-space: nowrap;
     letter-spacing: 0.15em;
-    animation: typing 10s steps(40, end), blink-caret 0.5s step-end infinite;
+    animation: typing 2s steps(24), cursor 0.5s step-end infinite alternate;
 }
 
 /* animation digitation */
@@ -305,7 +305,7 @@ svg {
     }
 }
 
-@keyframes blink-caret {
+@keyframes cursor {
     from,
     to {
         border-color: transparent;
