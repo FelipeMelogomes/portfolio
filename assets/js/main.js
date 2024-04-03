@@ -10,12 +10,10 @@ const toggleMenu = () => {
     navMenu.classList.toggle("show-menu");
 };
 
-// Adicionar evento de clique para mostrar o menu
 if (navToggle) {
     navToggle.addEventListener("click", toggleMenu);
 }
 
-// Adicionar evento de clique para esconder o menu
 if (navClose) {
     navClose.addEventListener("click", toggleMenu);
 }
