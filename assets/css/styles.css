@@ -825,7 +825,7 @@ html::-moz-scrollbar-thumb:hover {
     }
 
     .projects__container {
-        grid-template-columns: repeat(3, 350px);
+        grid-template-columns: repeat(3, 420px);
         row-gap: 3rem;
         padding-block: 2.5rem 4rem;
     }
@@ -835,8 +835,8 @@ html::-moz-scrollbar-thumb:hover {
     }
 
     .contact__container {
-        grid-template-columns: 680px;
-        padding-block: 2.5rem 2rem;
+        grid-template-columns: repeat(3, 420px);
+        padding-block: 2.5rem 4rem;
     }
 
     .contact__form {
