@@ -178,12 +178,16 @@ svg {
 }
 
 .nav__logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     color: var(--title-color);
     font-family: var(--font-medium);
 }
 
 .nav__logo span {
     color: var(--first-color);
+    padding-left: 5px;
 }
 
 .nav__toggle,
