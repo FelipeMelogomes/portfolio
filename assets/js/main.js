@@ -42,43 +42,6 @@ const blurHeader = () => {
 
 window.addEventListener("scroll", blurHeader);
 
-/* EMAIL JS */
-const contactForm = document.getElementById("contact-form");
-const contactMessage = document.getElementById("contact-message");
-
-const sendEmail = (e) => {
-    e.preventDefault();
-
-    // serviceID - templateID - #form - publicKey
-    emailjs
-        .sendForm(
-            "service_6be3jwr",
-            "template_gexsoj5",
-            "#contact-form",
-            "67CqkqzBExag3iaZ3"
-        )
-        .then(
-            () => {
-                // Show sent message
-                contactMessage.textContent = "Mensagem enviada com sucesso ✅";
-
-                // Remove message after five seconds
-                setTimeout(() => {
-                    contactMessage.textContent = "";
-                }, 5000);
-
-                // Clear input fields
-                contactForm.reset();
-            },
-            () => {
-                // Show error message
-                contactMessage.textContent =
-                    "Mensagem não enviada (erro de serviço)❌";
-            }
-        );
-};
-
-contactForm.addEventListener("submit", sendEmail);
 
 /* SHOW SCROLL UP */
 const scrollUp = () => {
